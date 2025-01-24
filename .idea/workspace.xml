@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d8a417d-19a6-4749-8811-136d62377cad" name="Changes" comment="">
+    <list default="true" id="0d8a417d-19a6-4749-8811-136d62377cad" name="Changes" comment="Initial Commit 🚀">
       <change afterPath="$PROJECT_DIR$/.idea/Streaming Website.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
@@ -48,6 +48,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Abtin0/free-movie-streaming.git",
+    "accountId": "a79caf2e-48d6-4f61-98f8-3a8cdecceec1"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -105,12 +111,25 @@
       <option name="presentableId" value="Default" />
       <updated>1737747321486</updated>
       <workItem from="1737747324371" duration="7000" />
-      <workItem from="1737747456566" duration="9105000" />
+      <workItem from="1737747456566" duration="9631000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit 🚀">
+      <option name="closed" value="true" />
+      <created>1737758796615</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1737758796615</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Commit " />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit " />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Streaming_Website$app.coverage" NAME="app Coverage Results" MODIFIED="1737756015526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

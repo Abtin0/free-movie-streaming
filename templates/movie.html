@@ -4,23 +4,50 @@
     <meta charset="UTF-8">
     <title>Movie Search</title>
     <link rel="stylesheet" href="../static/style.css">
+    <style>
+        .hidden {
+            display: none;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Search for a Movie</h1>
-    <form method="POST">
-        <label for="user_input">Movie Title:</label>
-        <input type="text" id="user_input" name="user_input" required>
-        <button type="submit" class="btn">Search</button>
-    </form>
-
-    {% if video_url %}
-        <div>
-            <a href="{{ video_url }}" target="_blank">
-                <button class="btn">Watch Movie</button>
-            </a>
+    <div class="movie-form">
+        <form method="POST">
+            <label for="user_input">Movie Title:</label>
+            <input type="text" id="user_input" name="user_input" required>
+            <button type="submit" class="btn">Search</button>
+        </form>
+            {% if video_url %}
+        <div class="movie-button">
+            <button class="btn" id="watchMovieButton">Watch Movie</button>
+        </div>
+        <div id="movieIframeContainer" class="hidden">
+            <iframe id="movieIframe" src="" allowfullscreen></iframe>
         </div>
     {% elif error %}
         <p>{{ error }}</p>
     {% endif %}
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const watchMovieButton = document.getElementById("watchMovieButton");
+            const movieIframeContainer = document.getElementById("movieIframeContainer");
+            const movieIframe = document.getElementById("movieIframe");
+
+            if (watchMovieButton) {
+                watchMovieButton.addEventListener("click", () => {
+                    // Set the `src` of the iframe to the `video_url` and show it
+                    movieIframe.src = "{{ video_url }}";
+                    movieIframeContainer.classList.remove("hidden");
+                });
+            }
+        });
+    </script>
 </body>
 </html>

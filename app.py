@@ -4,7 +4,7 @@ import requests
 app = Flask(__name__)
 
 omdb_endpoint = "https://www.omdbapi.com/"
-omdb_key = "afdfdee3"
+omdb_key = "YOUR_API_KEY"
 
 
 def movie_request(user_input):

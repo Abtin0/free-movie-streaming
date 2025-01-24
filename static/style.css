@@ -1,0 +1,157 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and HTML setup */
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+/* Container for centering content */
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 35%;
+    z-index: 2;
+}
+
+/* Header style */
+.header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    z-index: 3;
+}
+
+/* Overlay effect */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    z-index: 1;
+}
+
+/* Content positioning */
+.content {
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+}
+
+/* Button styles */
+.btn {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #333;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 30px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/* Specific button styles */
+.movie-btn {
+    background-color: #ff5c5c;
+}
+
+.series-btn {
+    background-color: #4f9d7f;
+}
+
+/* Background panning and zooming */
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../static/background.png') no-repeat center center;
+    background-size: cover;
+    animation: panZoom 40s linear infinite;
+    z-index: 0;
+}
+
+/* Form container styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    z-index: 3;
+}
+
+/* Input field styling */
+input[type="text"], input[type="email"], input[type="password"], textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus {
+    border-color: #ff5c5c; /* Highlight border color */
+    outline: none;
+}
+
+/* Textarea specific styles */
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Submit button styling */
+input[type="submit"] {
+    background-color: #4f9d7f;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #3e7d63;
+}
+
+/* Label styles */
+label {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    text-align: left;
+    width: 100%;
+}

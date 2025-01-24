@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Search</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <h1>Search for a Movie</h1>
+    <form method="POST">
+        <label for="user_input">Movie Title:</label>
+        <input type="text" id="user_input" name="user_input" required>
+        <button type="submit" class="btn">Search</button>
+    </form>
+
+    {% if video_url %}
+        <div>
+            <a href="{{ video_url }}" target="_blank">
+                <button class="btn">Watch Movie</button>
+            </a>
+        </div>
+    {% elif error %}
+        <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html>

@@ -25,14 +25,12 @@ def movie_request(user_input, endpoint_key):
         data = response.json()
         if data.get("Search"):
             imdb_id = data["Search"][0]["imdbID"]
-            # Dynamically construct the URL for a movie by appending "/movie"
             embed_url = f"{selected_endpoint}/movie/{imdb_id}"
             return embed_url
     return None
 
 
 def series_request(user_input, endpoint_key):
-    # Get the endpoint URL for the selected endpoint_key
     selected_endpoint = request.form["endpoint"]
 
     # Make the request to the selected endpoint
@@ -43,7 +41,6 @@ def series_request(user_input, endpoint_key):
         data = response.json()
         if data.get("Search"):
             imdb_id = data["Search"][0]["imdbID"]
-            # Dynamically construct the URL for a movie by appending "/movie"
             embed_url = f"{selected_endpoint}/tv/{imdb_id}"
             return embed_url
     return None

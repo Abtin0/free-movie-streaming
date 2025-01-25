@@ -4,13 +4,13 @@ import json
 
 app = Flask(__name__)
 
-omdb_key = "afdfdee3"
 omdb_endpoint = "https://www.omdbapi.com/"
-
+omdb_key = "YOUR_API_KEY"
 # Load the endpoints from the JSON file
 with open("static/endpoint.json", "r") as f:
     data = f.read()
     endpoints = json.loads(data)
+
 
 
 def movie_request(user_input, endpoint_key):

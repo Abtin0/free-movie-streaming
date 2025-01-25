@@ -20,18 +20,27 @@
         <form method="POST">
             <label for="user_input">Movie Title:</label>
             <input type="text" id="user_input" name="user_input" required>
+
+            <label for="endpoint">Select Server:</label>
+            <select id="endpoint" name="endpoint">
+                {% for key, value in endpoints.items() %}
+                    <option value="{{ value }}">{{ key }}</option>
+                {% endfor %}
+            </select>
+
             <button type="submit" class="btn">Search</button>
         </form>
-            {% if video_url %}
+
+        {% if video_url %}
         <div class="movie-button">
             <button class="btn" id="watchMovieButton">Watch Movie</button>
         </div>
         <div id="movieIframeContainer" class="hidden">
             <iframe id="movieIframe" src="" allowfullscreen></iframe>
         </div>
-    {% elif error %}
-        <p>{{ error }}</p>
-    {% endif %}
+        {% elif error %}
+            <p>{{ error }}</p>
+        {% endif %}
     </div>
 
     <script>

@@ -172,3 +172,54 @@ iframe {
     height: 100%;
     border: none;
 }
+
+/* Dropdown (select) styling */
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1rem;
+    appearance: none; /* Removes default styling */
+    -webkit-appearance: none; /* For Safari */
+    -moz-appearance: none; /* For Firefox */
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+/* Dropdown focus styling */
+select:focus {
+    border-color: #ff5c5c; /* Highlight border color on focus */
+    outline: none;
+}
+
+/* Dropdown arrow styling */
+select::-ms-expand {
+    display: none; /* Removes default dropdown arrow in IE */
+}
+
+/* Style for the custom dropdown arrow */
+.select-container {
+    position: relative;
+    width: 100%;
+}
+
+.select-container::after {
+    content: '▼';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1.2rem;
+    pointer-events: none; /* Prevents interference with dropdown interaction */
+}
+
+/* Adjust label for dropdown */
+label[for="dropdown"] {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}

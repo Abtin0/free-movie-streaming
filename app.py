@@ -59,8 +59,11 @@ def index():
 def movie():
     if request.method == "POST":
         user_input = request.form["user_input"]
-        if user_input[-1] == " ":
-            user_input = user_input[:-1]
+        while True:
+            if user_input[-1] == " ":
+                user_input = user_input[:-1]
+                continue
+            break
         endpoint_key = request.form["endpoint"]
 
         # Call the movie_request function
@@ -80,8 +83,11 @@ def movie():
 def series():
     if request.method == "POST":
         user_input = request.form["user_input"]
-        if user_input[-1] == " ":
-            user_input = user_input[:-1]
+        while True:
+            if user_input[-1] == " ":
+                user_input = user_input[:-1]
+                continue
+            break
         endpoint_key = request.form["endpoint"]
 
         # Call the movie_request function

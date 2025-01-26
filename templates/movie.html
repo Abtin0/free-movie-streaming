@@ -16,6 +16,11 @@
     </style>
 </head>
 <body>
+    {% if video_url %}
+        <div id="movieIframeContainer" class="hidden">
+            <iframe id="movieIframe" src="" allowfullscreen></iframe>
+        </div>
+    {% endif %}
     <div class="movie-form">
         <form method="POST">
             <label for="user_input">Movie Title:</label>
@@ -35,13 +40,16 @@
         <div class="movie-button">
             <button class="btn" id="watchMovieButton">Watch Movie</button>
         </div>
-        <div id="movieIframeContainer" class="hidden">
-            <iframe id="movieIframe" src="" allowfullscreen></iframe>
-        </div>
         {% elif error %}
             <p>{{ error }}</p>
         {% endif %}
     </div>
+{% if video_url %}
+    <div class="movie-result">
+        <img src="{{poster}}" alt="{{name}} poster" class="poster" />
+        <p class="name">{{name}}</p>
+    </div>
+{% endif %}
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {

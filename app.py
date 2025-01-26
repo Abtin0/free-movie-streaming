@@ -5,12 +5,11 @@ import json
 app = Flask(__name__)
 
 omdb_endpoint = "https://www.omdbapi.com/"
-omdb_key = "YOUR_API_KEY"
+omdb_key = "afdfdee3"
 # Load the endpoints from the JSON file
 with open("static/endpoint.json", "r") as f:
     data = f.read()
     endpoints = json.loads(data)
-
 
 
 def movie_request(user_input, endpoint_key):
@@ -25,8 +24,10 @@ def movie_request(user_input, endpoint_key):
         data = response.json()
         if data.get("Search"):
             imdb_id = data["Search"][0]["imdbID"]
+            poster = data["Search"][0]["Poster"]
+            movie_name = data["Search"][0]["Title"]
             embed_url = f"{selected_endpoint}/movie/{imdb_id}"
-            return embed_url
+            return embed_url, poster, movie_name
     return None
 
 
@@ -45,7 +46,6 @@ def series_request(user_input, endpoint_key):
             return embed_url
     return None
 
-
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -58,11 +58,11 @@ def movie():
         endpoint_key = request.form["endpoint"]
 
         # Call the movie_request function
-        movie_endpoint = movie_request(user_input, endpoint_key)
+        movie_endpoint, poster, name = movie_request(user_input, endpoint_key)
 
         # Return the result based on whether a video URL is found
         if movie_endpoint:
-            return render_template('movie.html', video_url=movie_endpoint, endpoints=endpoints)
+            return render_template('movie.html', video_url=movie_endpoint, endpoints=endpoints,  poster=poster, name=name)
         else:
             return render_template('movie.html', error="No movies found for your search.", endpoints=endpoints)
 

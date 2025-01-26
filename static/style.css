@@ -171,6 +171,7 @@ iframe {
     width: 100%;
     height: 100%;
     border: none;
+    margin-right: 50px;
 }
 
 /* Dropdown (select) styling */
@@ -222,4 +223,22 @@ select::-ms-expand {
 label[for="dropdown"] {
     margin-bottom: 8px;
     font-size: 1.1rem;
+}
+
+.ad-banner, .popup-ad {
+    display: none !important;
+}
+
+.movie-result {
+    margin-left: 50px;
+}
+
+.poster {
+    border-radius: 10px;
+}
+
+.name {
+    margin: 5px;
+    text-align: center;
+    font-size: 1.3rem;
 }

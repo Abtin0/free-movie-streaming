@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Show Search</title>
+    <title>Movie Search</title>
     <link rel="stylesheet" href="../static/style.css">
     <style>
         .hidden {
@@ -16,9 +16,14 @@
     </style>
 </head>
 <body>
+    {% if video_url %}
+        <div id="movieIframeContainer" class="hidden">
+            <iframe id="movieIframe" src="" allowfullscreen></iframe>
+        </div>
+    {% endif %}
     <div class="movie-form">
         <form method="POST">
-            <label for="user_input">Movie Title:</label>
+            <label for="user_input">Show Title:</label>
             <input type="text" id="user_input" name="user_input" required>
 
             <label for="endpoint">Select Server:</label>
@@ -35,13 +40,16 @@
         <div class="movie-button">
             <button class="btn" id="watchMovieButton">Watch Show</button>
         </div>
-        <div id="movieIframeContainer" class="hidden">
-            <iframe id="movieIframe" src="" allowfullscreen></iframe>
-        </div>
         {% elif error %}
             <p>{{ error }}</p>
         {% endif %}
     </div>
+{% if video_url %}
+    <div class="movie-result">
+        <img src="{{poster}}" alt="{{name}} poster" class="poster" />
+        <p class="name">{{name}}</p>
+    </div>
+{% endif %}
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {

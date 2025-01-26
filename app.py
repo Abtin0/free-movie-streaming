@@ -59,6 +59,8 @@ def index():
 def movie():
     if request.method == "POST":
         user_input = request.form["user_input"]
+        if user_input[-1] == " ":
+            user_input = user_input[:-1]
         endpoint_key = request.form["endpoint"]
 
         # Call the movie_request function
@@ -78,6 +80,8 @@ def movie():
 def series():
     if request.method == "POST":
         user_input = request.form["user_input"]
+        if user_input[-1] == " ":
+            user_input = user_input[:-1]
         endpoint_key = request.form["endpoint"]
 
         # Call the movie_request function
@@ -95,3 +99,5 @@ def series():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
+
+#TODO Add a discover page

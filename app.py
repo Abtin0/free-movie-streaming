@@ -58,12 +58,8 @@ def index():
 @app.route('/movie', methods=["GET", "POST"])
 def movie():
     if request.method == "POST":
-        user_input = request.form["user_input"]
-        while True:
-            if user_input[-1] == " ":
-                user_input = user_input[:-1]
-                continue
-            break
+        user_input = request.form["user_input"].strip()
+        user_input = " ".join(user_input.split())
         endpoint_key = request.form["endpoint"]
 
         # Call the movie_request function
@@ -82,12 +78,8 @@ def movie():
 @app.route('/series', methods=["GET", "POST"])
 def series():
     if request.method == "POST":
-        user_input = request.form["user_input"]
-        while True:
-            if user_input[-1] == " ":
-                user_input = user_input[:-1]
-                continue
-            break
+        user_input = request.form["user_input"].strip()
+        user_input = " ".join(user_input.split())
         endpoint_key = request.form["endpoint"]
 
         # Call the movie_request function

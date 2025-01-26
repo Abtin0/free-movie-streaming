@@ -26,12 +26,13 @@ def movie_request(user_input, endpoint_key):
             imdb_id = data["Search"][0]["imdbID"]
             poster = data["Search"][0]["Poster"]
             movie_name = data["Search"][0]["Title"]
-            embed_url = f"{selected_endpoint}/movie/{imdb_id}"
+            embed_url = f"{selected_endpoint}movie/{imdb_id}"
             return embed_url, poster, movie_name
     return None
 
 
 def series_request(user_input, endpoint_key):
+    # Get the endpoint URL for the selected endpoint_key
     selected_endpoint = request.form["endpoint"]
 
     # Make the request to the selected endpoint
@@ -42,9 +43,12 @@ def series_request(user_input, endpoint_key):
         data = response.json()
         if data.get("Search"):
             imdb_id = data["Search"][0]["imdbID"]
-            embed_url = f"{selected_endpoint}/tv/{imdb_id}"
-            return embed_url
+            poster = data["Search"][0]["Poster"]
+            show_name = data["Search"][0]["Title"]
+            embed_url = f"{selected_endpoint}tv/{imdb_id}"
+            return embed_url, poster, show_name
     return None
+
 
 @app.route('/')
 def index():
@@ -76,16 +80,16 @@ def series():
         user_input = request.form["user_input"]
         endpoint_key = request.form["endpoint"]
 
-        # Call the series_request function
-        series_endpoint = series_request(user_input, endpoint_key)
+        # Call the movie_request function
+        movie_endpoint, poster, name = series_request(user_input, endpoint_key)
 
         # Return the result based on whether a video URL is found
-        if series_endpoint:
-            return render_template('series.html', video_url=series_endpoint, endpoints=endpoints)
+        if movie_endpoint:
+            return render_template('series.html', video_url=movie_endpoint, endpoints=endpoints,  poster=poster, name=name)
         else:
-            return render_template('series.html', error="No series found for your search.", endpoints=endpoints)
+            return render_template('series.html', error="No shows found for your search.", endpoints=endpoints)
 
-    # Initial GET request, render the series page with available endpoints
+    # Initial GET request, render the movie page with available endpoints
     return render_template('series.html', endpoints=endpoints)
 
 

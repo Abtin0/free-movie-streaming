@@ -9,6 +9,10 @@ p {
     color: white;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* Body and HTML setup */
 body, html {
     height: 100%;
@@ -160,7 +164,7 @@ label {
     width: 100%;
 }
 
-iframe, form ,.movie-button{
+iframe, form, .movie-button {
     margin-bottom: 20px;
     max-width: fit-content;
     margin-left: auto;
@@ -241,4 +245,30 @@ label[for="dropdown"] {
     margin: 5px;
     text-align: center;
     font-size: 1.3rem;
+}
+
+/* Grid display */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.grid-item {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
 }

@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d8a417d-19a6-4749-8811-136d62377cad" name="Changes" comment="- Fixed Search Bug 🔧">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/series.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/series.html" afterDir="false" />
-    </list>
+    <list default="true" id="0d8a417d-19a6-4749-8811-136d62377cad" name="Changes" comment="- Added Navbar" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -149,7 +145,7 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -178,7 +174,7 @@
       <workItem from="1737747456566" duration="9631000" />
       <workItem from="1737933646332" duration="876000" />
       <workItem from="1738027199524" duration="1003000" />
-      <workItem from="1744482675821" duration="297000" />
+      <workItem from="1744482675821" duration="755000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit 🚀">
       <option name="closed" value="true" />
@@ -220,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1737934435129</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="- Added Navbar">
+      <option name="closed" value="true" />
+      <created>1744483147820</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1744483147820</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,10 +234,11 @@
     <MESSAGE value="Initial Commit " />
     <MESSAGE value="- Minor Changes" />
     <MESSAGE value="- Fixed Search Bug " />
-    <option name="LAST_COMMIT_MESSAGE" value="- Fixed Search Bug " />
+    <MESSAGE value="- Added Navbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added Navbar" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Streaming_Website$Streaming_Website.coverage" NAME="Streaming Website Coverage Results" MODIFIED="1738028430124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Streaming_Website$Streaming_Website.coverage" NAME="Streaming Website Coverage Results" MODIFIED="1744483093512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/Streaming_Website$app.coverage" NAME="app Coverage Results" MODIFIED="1737762267736" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

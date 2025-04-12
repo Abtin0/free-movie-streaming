@@ -15,6 +15,13 @@
         }
     </style>
 </head>
+<header class="navbar">
+    <nav>
+        <button onclick="location.href='/'">Home</button>
+        <button onclick="location.href='/series'">Series</button>
+        <button onclick="location.href='/movie'">Movies</button>
+    </nav>
+</header>
 <body>
     {% if video_url %}
         <div id="movieIframeContainer" class="hidden">

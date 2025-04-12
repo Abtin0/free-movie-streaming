@@ -39,7 +39,7 @@ def series_request(user_input, endpoint_key):
     response = requests.get(omdb_endpoint, params={"apikey": omdb_key, "s": user_input})
 
     # Check if the response is successful
-    if response.status_code == 200:
+    if response.status_code == 200 and "Error" not in response.json():
         data = response.json()
         if data.get("Search"):
             imdb_id = data["Search"][0]["imdbID"]
